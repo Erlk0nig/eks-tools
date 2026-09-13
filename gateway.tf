@@ -5,7 +5,7 @@ resource "kubectl_manifest" "gateway_class" {
 
 resource "kubectl_manifest" "gateway" {
   yaml_body  = file("${path.root}/kubernetes/manifests/gateway.yaml")
-  depends_on = [kubectl_manifest.http_route_kubeflow_pipelines, kubectl_manifest.gateway_class]
+  depends_on = [kubectl_manifest.gateway_class]
 }
 
 resource "kubectl_manifest" "http_route_grafana" {
