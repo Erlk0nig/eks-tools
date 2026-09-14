@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: grafana-tls
   dnsNames:
-  - aziz-soudani-grafana.eks.karimarous.com
+  - ${grafana_hostname}
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-prod

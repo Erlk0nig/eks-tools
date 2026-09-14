@@ -15,6 +15,14 @@ on:
         required: true
         default: "aziz-soudani-dev-eks-cluster"
         type: string
+      grafana_hostname:
+        description: "Grafana public hostname"
+        required: true
+        type: string
+      prometheus_hostname:
+        description: "Prometheus public hostname"
+        required: true
+        type: string
 
 permissions:
   id-token: write
@@ -45,7 +53,7 @@ jobs:
         run: terraform workspace select ${{ github.event.inputs.workspace }} || terraform workspace new ${{ github.event.inputs.workspace }}
       - name: Terraform plan
         working-directory: ./
-        run: terraform plan -var cluster_name=${{ github.event.inputs.cluster_name }}
+        run: terraform plan -var="cluster_name=${{ github.event.inputs.cluster_name }}" -var="grafana_hostname=${{ github.event.inputs.grafana_hostname }}" -var="prometheus_hostname=${{ github.event.inputs.prometheus_hostname }}"
       - name: Terraform Apply
         working-directory: ./
-        run: terraform apply -var cluster_name=${{ github.event.inputs.cluster_name }} -auto-approve
+        run: terraform apply -var="cluster_name=${{ github.event.inputs.cluster_name }}" -var="grafana_hostname=${{ github.event.inputs.grafana_hostname }}" -var="prometheus_hostname=${{ github.event.inputs.prometheus_hostname }}" -auto-approve

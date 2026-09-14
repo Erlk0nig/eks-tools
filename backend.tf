@@ -1,6 +1,6 @@
 terraform {
   # Terraform configuration for AWS backend.
-   backend "s3" {
+  backend "s3" {
     bucket       = ""
     key          = ""
     region       = ""

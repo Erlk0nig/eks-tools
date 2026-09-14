@@ -18,7 +18,7 @@ spec:
       namespaces:
         from: All
   - name: prometheus-https
-    hostname: aziz-soudani-prometheus.eks.karimarous.com
+    hostname: ${prometheus_hostname}
     port: 443
     protocol: HTTPS
     tls:
@@ -30,7 +30,7 @@ spec:
       namespaces:
         from: All
   - name: grafana-https
-    hostname: aziz-soudani-grafana.eks.karimarous.com
+    hostname: ${grafana_hostname}
     port: 443
     protocol: HTTPS
     tls:

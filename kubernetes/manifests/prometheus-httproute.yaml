@@ -8,7 +8,7 @@ spec:
   - name: public-gateway
     namespace: envoy-gateway-system
   hostnames:
-  - aziz-soudani-prometheus.eks.karimarous.com
+  - ${prometheus_hostname}
   rules:
   - backendRefs:
     - name: kube-prometheus-stack-prometheus
