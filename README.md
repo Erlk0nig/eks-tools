@@ -4,6 +4,8 @@ Terraform and GitHub Actions for the second part of the EKS project.
 
 This repository does not create the Kubernetes cluster itself. It is the add-on layer that is applied after the base infrastructure from the first project, `aws-eks-project`, is already available.
 
+The first project repository is here: [aws-eks-project](https://github.com/your-org/aws-eks-project).
+
 The first project provisions the AWS foundation and EKS cluster. This repository installs and configures the in-cluster tooling that sits on top of it:
 
 - cert-manager for TLS certificate management
